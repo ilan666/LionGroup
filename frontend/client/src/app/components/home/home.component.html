@@ -1,0 +1,48 @@
+<!-- <div *ngIf="users">
+  <h1>Data from the Backend</h1>
+  <p>{{ users }}</p>
+
+</div>
+
+<div *ngIf="!users">
+  <p>Loading data...</p>
+</div> -->
+
+<section class="short-section">
+  <div class="main-photo"></div>
+  <div
+    class="main-photo-dark hidden"
+    appScrollSlide
+    [showClass]="'show'"
+    [hideClass]="'hide'"
+    [delay]="'0.3s'"
+  ></div>
+  <div class="section-content">
+    <div
+      class="logo-image hidden"
+      appScrollSlide
+      [showClass]="'show'"
+      [hideClass]="'hide'"
+      [delay]="'0.3s'"
+    ></div>
+    <h3
+      class="header-3 hidden"
+      appScrollSlide
+      [showClass]="'show'"
+      [hideClass]="'hide'"
+      [delay]="'0.6s'"
+    >
+      Innovative website solutions.
+    </h3>
+    <button
+      class="homeBtn hidden"
+      appScrollSlide
+      [showClass]="'show'"
+      [hideClass]="'hide'"
+      [delay]="'0.9s'"
+    >
+      Let's start!
+    </button>
+  </div>
+</section>
+<section class="short-section"></section>

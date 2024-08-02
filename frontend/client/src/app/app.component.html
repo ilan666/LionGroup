@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <a class="logo" routerLink="/" (click)="setCurrentRoute('home')">LionGroup</a>
+  <ul class="nav-links">
+    <li>
+      <a
+        routerLink="/services"
+        [ngClass]="{ active: currentRoute === 'services' }"
+        (click)="setCurrentRoute('services')"
+        >Services</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/contact"
+        [ngClass]="{ active: currentRoute === 'contact' }"
+        (click)="setCurrentRoute('contact')"
+        >Contact</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/about"
+        [ngClass]="{ active: currentRoute === 'about' }"
+        (click)="setCurrentRoute('about')"
+        >About</a
+      >
+    </li>
+  </ul>
+  <div class="burger" (click)="toggleNavbar()">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

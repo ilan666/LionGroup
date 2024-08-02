@@ -1,0 +1,80 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the theme object.
+$client-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes($client-theme);
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($client-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($client-theme);
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Main Color: #1ABC9C (Teal) - Utilized for primary actions, call-to-actions, and highlights.
+// Secondary Color: #2C3E50 (Dark Blue-Grey) - Used for headers, text, footers, and backgrounds.
+// Additional Colors:
+// Light Neutral: #ecf0f1 (Light Grey) - For backgrounds, sections, and light accents.
+// Darker Neutral: #bdc3c7 (Grey) - For borders, lines, and subtle text.
+// Accent Color 1: #e74c3c (Red) - For error messages, alerts, and attention-grabbing elements.
+// Accent Color 2: #3498db (Blue) - For secondary call-to-actions, links, and highlights.
+// Accent Color 3: #f39c12 (Orange) - For warnings, highlights, and calls to action that need to stand out.
+// Full Palette:
+// Main Color: #1ABC9C (Teal)
+// Secondary Color: #2C3E50 (Dark Blue-Grey)
+// Light Neutral: #ECF0F1 (Light Grey)
+// Darker Neutral: #BDC3C7 (Grey)
+// Accent Color 1: #E74C3C (Red)
+// Accent Color 2: #3498DB (Blue)
+// Accent Color 3: #F39C12 (Orange)
+// Sample Usage
+// Backgrounds
+// Main background: #ECF0F1 (Light Grey)
+// Footer background: #2C3E50 (Dark Blue-Grey)
+// Section backgrounds: Use alternating colors like #BDC3C7 (Grey) and #ECF0F1 (Light Grey) for subtle separation.
+// Text
+// Main text: #2C3E50 (Dark Blue-Grey)
+// Secondary text and captions: #7F8C8D (as a lighter grey)
+// Link text: #3498DB (Blue)
+// Buttons and Interactive Elements
+// Primary buttons: #1ABC9C (Teal) with text in #FFFFFF (White)
+// Secondary buttons: #2C3E50 (Dark Blue-Grey) with text in #FFFFFF (White)
+// Attention or alert buttons: #E74C3C (Red)
+// Icons and Accents
+// Icons: Utilize #1ABC9C (Teal) or #3498DB (Blue) for icons to keep them in line with the branding colors.
+// Highlights: Use #F39C12 (Orange) for elements that need to draw attention like notifications or important messages.
