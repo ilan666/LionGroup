@@ -11,38 +11,114 @@
 <section class="short-section">
   <div class="main-photo"></div>
   <div
-    class="main-photo-dark hidden"
+    class="main-photo-dark hidden-left"
     appScrollSlide
     [showClass]="'show'"
     [hideClass]="'hide'"
-    [delay]="'0.3s'"
+    [delay]="'0s'"
   ></div>
   <div class="section-content">
     <div
-      class="logo-image hidden"
+      class="logo-image hidden-left"
       appScrollSlide
       [showClass]="'show'"
       [hideClass]="'hide'"
-      [delay]="'0.3s'"
+      [delay]="'0.2s'"
     ></div>
     <h3
-      class="header-3 hidden"
+      class="header-3 hidden-left"
       appScrollSlide
       [showClass]="'show'"
       [hideClass]="'hide'"
-      [delay]="'0.6s'"
+      [delay]="'0.4s'"
     >
       Innovative website solutions.
     </h3>
     <button
-      class="homeBtn hidden"
+      class="homeBtn hidden-left"
       appScrollSlide
       [showClass]="'show'"
       [hideClass]="'hide'"
-      [delay]="'0.9s'"
+      [delay]="'0.7s'"
     >
       Let's start!
     </button>
   </div>
 </section>
-<section class="short-section"></section>
+<section class="short-section">
+  <div class="section-container">
+    <div class="header-container scroll-element" appScrollVisible>
+      <h1 class="header-1">Our Services</h1>
+      <h3 class="header-3">Click on one to jump right to!</h3>
+    </div>
+    <div class="service-cards scroll-element" appScrollVisible>
+      <div class="service-card" appScrollOffset>
+        <div class="header-container">
+          <i class="services-icon material-icons">desktop_windows</i>
+          <h4>Web Design</h4>
+          <p>Stunning and functional web designs to elevate your brand.</p>
+        </div>
+        <button class="primary-button">Learn more..</button>
+      </div>
+      <div class="service-card" appScrollOffset>
+        <div class="header-container">
+          <i class="services-icon material-icons">code</i>
+          <h4>API Development</h4>
+          <p>Robust API solutions for seamless integration.</p>
+        </div>
+        <button class="primary-button">Learn more..</button>
+      </div>
+      <div class="service-card" appScrollOffset>
+        <div class="header-container">
+          <i class="services-icon material-icons">query_stats</i>
+          <h4>SEO Optimization</h4>
+          <p>Enhancing your visibility and rankings on search engines.</p>
+        </div>
+        <button class="primary-button">Learn more..</button>
+      </div>
+      <div class="service-card" appScrollOffset>
+        <div class="header-container">
+          <i class="services-icon material-icons">shopping_cart</i>
+          <h4>E-Commerce Solutions</h4>
+          <p>Comprehensive e-commerce systems tailored to your needs.</p>
+        </div>
+        <button class="primary-button">Learn more..</button>
+      </div>
+      <div class="service-card" appScrollOffset>
+        <div class="header-container">
+          <i class="services-icon material-icons">person</i>
+          <h4>Bio</h4>
+          <p>
+            We craft compelling biographies that resonate with your audience.
+          </p>
+        </div>
+        <button class="primary-button">Learn more..</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="long-section">
+  <div class="web-design-photo"></div>
+  <div class="left-poly scroll-element" appScrollVisible></div>
+</section>
+<section class="long-section">
+  <div class="api-photo"></div>
+  <div class="right-poly scroll-element" appScrollVisible></div>
+</section>
+<section class="long-section">
+  <div class="seo-photo"></div>
+  <div class="left-poly scroll-element" appScrollVisible></div>
+</section>
+<section class="long-section">
+  <div class="e-commerce-photo"></div>
+  <div class="right-poly scroll-element" appScrollVisible></div>
+</section>
+<section class="long-section">
+  <div class="bio-photo"></div>
+  <div class="left-poly scroll-element" appScrollVisible></div>
+</section>
+<section class="short-section">
+  <div class="subscribe-container">
+    <div class="subscribe-content scroll-element" appScrollVisible></div>
+  </div>
+</section>

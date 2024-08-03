@@ -3,15 +3,26 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ScrollSlideDirective } from '../../directives/scrollSlide.directive';
 import { RouterModule } from '@angular/router';
+import { ScrollVisibleDirective } from '../../directives/scrollVisible.directive';
+import { ScrollOffsetDirective } from '../../directives/scrollOffset.directive';
+import { ScrollSlideRightDirective } from '../../directives/scrollSlideRight.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, ScrollSlideDirective],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    ScrollSlideDirective,
+    ScrollVisibleDirective,
+    ScrollOffsetDirective,
+    ScrollSlideRightDirective,
+  ],
   templateUrl: './home.component.html',
   styleUrls: [
     './home.component.scss',
     '../../directives/scrollSlide.directive.css',
+    '../../directives/scrollVisible.directive.css',
   ],
 })
 export class HomeComponent implements OnInit {

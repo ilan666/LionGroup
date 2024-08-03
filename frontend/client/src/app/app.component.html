@@ -3,10 +3,10 @@
   <ul class="nav-links">
     <li>
       <a
-        routerLink="/services"
-        [ngClass]="{ active: currentRoute === 'services' }"
-        (click)="setCurrentRoute('services')"
-        >Services</a
+        routerLink="/terms"
+        [ngClass]="{ active: currentRoute === 'terms' }"
+        (click)="setCurrentRoute('terms')"
+        >Terms of service</a
       >
     </li>
     <li>
@@ -34,3 +34,5 @@
 </nav>
 
 <router-outlet></router-outlet>
+
+<footer class="footer">Footer</footer>

@@ -1,12 +1,15 @@
-import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  HostListener,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+  Renderer2,
+} from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { provideHttpClient } from '@angular/common/http';
-import { AboutComponent } from './components/about/about.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { ServicesComponent } from './components/services/services.component';
-import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +28,8 @@ export class AppComponent {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     if (this.isBrowser) {

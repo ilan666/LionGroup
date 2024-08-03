@@ -34,7 +34,7 @@ export class ScrollSlideDirective implements AfterViewInit {
     const scrollPosition = scrollTop / docHeight;
 
     // Calculate 30% of page scroll position
-    if (scrollPosition >= 0.2) {
+    if (scrollPosition >= 0.05) {
       this.hide();
     } else {
       this.show();
