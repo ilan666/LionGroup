@@ -32,7 +32,7 @@ export class ScrollOffsetDirective implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (isPlatformBrowser(this.platformId)) {
-      window.removeEventListener('scroll', this.onScroll);
+      window.removeEventListener('scroll', this.onScroll.bind(this));
     }
   }
 

@@ -47,12 +47,18 @@
 </section>
 <section class="short-section">
   <div class="section-container">
-    <div class="header-container scroll-element" appScrollVisible>
-      <h1 class="header-1">Our Services</h1>
-      <h3 class="header-3">Click on one to jump right to!</h3>
+    <div class="header-container">
+      <h1 class="header-1 scroll-element" appScrollVisible>Our Services</h1>
+      <h3 class="header-3 scroll-element" appScrollVisible>
+        Click on one to jump right to!
+      </h3>
     </div>
     <div class="service-cards scroll-element" appScrollVisible>
-      <div class="service-card" appScrollOffset>
+      <div
+        class="service-card"
+        appScrollOffset
+        (click)="scrollToSection('web-design')"
+      >
         <div class="header-container">
           <i class="services-icon material-icons">desktop_windows</i>
           <h4>Web Design</h4>
@@ -60,7 +66,11 @@
         </div>
         <button class="primary-button">Learn more..</button>
       </div>
-      <div class="service-card" appScrollOffset>
+      <div
+        class="service-card"
+        appScrollOffset
+        (click)="scrollToSection('api-development')"
+      >
         <div class="header-container">
           <i class="services-icon material-icons">code</i>
           <h4>API Development</h4>
@@ -68,7 +78,11 @@
         </div>
         <button class="primary-button">Learn more..</button>
       </div>
-      <div class="service-card" appScrollOffset>
+      <div
+        class="service-card"
+        appScrollOffset
+        (click)="scrollToSection('seo-optimization')"
+      >
         <div class="header-container">
           <i class="services-icon material-icons">query_stats</i>
           <h4>SEO Optimization</h4>
@@ -76,7 +90,11 @@
         </div>
         <button class="primary-button">Learn more..</button>
       </div>
-      <div class="service-card" appScrollOffset>
+      <div
+        class="service-card"
+        appScrollOffset
+        (click)="scrollToSection('e-commerce')"
+      >
         <div class="header-container">
           <i class="services-icon material-icons">shopping_cart</i>
           <h4>E-Commerce Solutions</h4>
@@ -84,7 +102,11 @@
         </div>
         <button class="primary-button">Learn more..</button>
       </div>
-      <div class="service-card" appScrollOffset>
+      <div
+        class="service-card"
+        appScrollOffset
+        (click)="scrollToSection('bio')"
+      >
         <div class="header-container">
           <i class="services-icon material-icons">person</i>
           <h4>Bio</h4>
@@ -97,25 +119,354 @@
     </div>
   </div>
 </section>
-<section class="long-section">
+<section class="long-section" id="web-design">
   <div class="web-design-photo"></div>
   <div class="left-poly scroll-element" appScrollVisible></div>
+  <div class="sub-section-content">
+    <div class="description">
+      <h2 class="scroll-element" appScrollVisible>Web Design</h2>
+      <p class="scroll-element" appScrollVisible>
+        Our web design services focus on creating stunning, efficient, and
+        user-friendly websites that represent your brand effectively. With an
+        emphasis on modern aesthetics and functionality, we ensure your online
+        presence stands out.
+      </p>
+      <ul>
+        <li class="scroll-element" appScrollVisible>
+          Responsive Design for All Devices
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Custom UI/UX Designs Tailored to Your Needs
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Integration of Latest Design Trends
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          User-Centric Layouts for Enhanced Engagement
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Ongoing Support and Maintenance
+        </li>
+      </ul>
+    </div>
+    <div class="form-container">
+      <h3 class="scroll-element" appScrollVisible>
+        Contact Us for Your Web Design Needs:
+      </h3>
+      <form class="contact-form">
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="description">Description of Request:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="primary-button scroll-element"
+          appScrollVisible
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
 </section>
-<section class="long-section">
+<section class="long-section" id="api-development">
   <div class="api-photo"></div>
   <div class="right-poly scroll-element" appScrollVisible></div>
+  <div class="sub-section-content">
+    <div class="form-container">
+      <h3 class="scroll-element" appScrollVisible>
+        Contact Us for API Development:
+      </h3>
+      <form class="contact-form">
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="description">Description of Request:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="primary-button scroll-element"
+          appScrollVisible
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <div class="description">
+      <h2 class="scroll-element" appScrollVisible>API Development</h2>
+      <p class="scroll-element" appScrollVisible>
+        We specialize in crafting robust and scalable APIs that enable seamless
+        integration between your applications and services. Our solutions are
+        designed for performance, security, and reliability.
+      </p>
+      <ul>
+        <li class="scroll-element" appScrollVisible>
+          RESTful API Design and Implementation
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          API Documentation and Testing
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Integration with Third-Party Services
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Security Features, Including Authentication
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Ongoing Maintenance and Support
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
-<section class="long-section">
+<section class="long-section" id="seo-optimization">
   <div class="seo-photo"></div>
   <div class="left-poly scroll-element" appScrollVisible></div>
+  <div class="sub-section-content">
+    <div class="description">
+      <h2 class="scroll-element" appScrollVisible>SEO Optimization</h2>
+      <p class="scroll-element" appScrollVisible>
+        Our SEO optimization services help improve your website's visibility on
+        search engines, driving traffic and increasing conversion rates. Our
+        tailored strategies ensure your brand stands out in the digital
+        landscape.
+      </p>
+      <ul>
+        <li class="scroll-element" appScrollVisible>
+          Keyword Research and Analysis
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          On-Page and Off-Page Optimization
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Link Building Strategies
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Content Optimization for Better Engagement
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Performance Tracking and Analytics
+        </li>
+      </ul>
+    </div>
+    <div class="form-container">
+      <h3 class="scroll-element" appScrollVisible>
+        Contact Us for SEO Services:
+      </h3>
+      <form class="contact-form">
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="description">Description of Request:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="primary-button scroll-element"
+          appScrollVisible
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
 </section>
-<section class="long-section">
+<section class="long-section" id="e-commerce">
   <div class="e-commerce-photo"></div>
   <div class="right-poly scroll-element" appScrollVisible></div>
+  <div class="sub-section-content">
+    <div class="form-container">
+      <h3 class="scroll-element" appScrollVisible>
+        Contact Us for E-Commerce Solutions:
+      </h3>
+      <form class="contact-form">
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="description">Description of Request:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="primary-button scroll-element"
+          appScrollVisible
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <div class="description">
+      <h2 class="scroll-element" appScrollVisible>E-Commerce Solutions</h2>
+      <p class="scroll-element" appScrollVisible>
+        We provide comprehensive e-commerce solutions tailored to your business
+        needs, ensuring a smooth shopping experience for your customers while
+        driving growth for your business.
+      </p>
+      <ul>
+        <li class="scroll-element" appScrollVisible>
+          Custom E-Commerce Website Development
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Integration with Payment Gateways
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Shopping Cart Implementation
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          User-Friendly Product Management
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Security Best Practices for Online Transactions
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
-<section class="long-section">
+<section class="long-section" id="bio">
   <div class="bio-photo"></div>
   <div class="left-poly scroll-element" appScrollVisible></div>
+  <div class="sub-section-content">
+    <div class="description">
+      <h2 class="scroll-element" appScrollVisible>Bio</h2>
+      <p class="scroll-element" appScrollVisible>
+        We specialize in crafting compelling biographies that resonate with your
+        audience. Our writing not only highlights your achievements but also
+        connects with readers at an emotional level.
+      </p>
+      <ul>
+        <li class="scroll-element" appScrollVisible>
+          Personalized Biography Writing Services
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Engaging Storytelling Techniques
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Focus on Authenticity and Voice
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Professional Editing and Proofreading
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          Formatting for Various Platforms
+        </li>
+      </ul>
+    </div>
+    <div class="form-container">
+      <h3 class="scroll-element" appScrollVisible>
+        Contact Us for Your Biography Needs:
+      </h3>
+      <form class="contact-form">
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div class="form-group scroll-element" appScrollVisible>
+          <label for="description">Description of Request:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="primary-button scroll-element"
+          appScrollVisible
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
 </section>
 <section class="short-section">
   <div class="subscribe-container">

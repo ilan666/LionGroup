@@ -1,10 +1,4 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ScrollSlideDirective } from '../../directives/scrollSlide.directive';
-import { RouterModule } from '@angular/router';
-import { ScrollVisibleDirective } from '../../directives/scrollVisible.directive';
-import { ScrollOffsetDirective } from '../../directives/scrollOffset.directive';
 
 @Component({
   selector: 'app-home',
@@ -16,22 +10,14 @@ import { ScrollOffsetDirective } from '../../directives/scrollOffset.directive';
   ],
 })
 export class HomeComponent implements OnInit {
-  // users: any[] = [];
+  constructor() {}
 
-  constructor(private http: HttpClient) {}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    // this.fetchUsers();
+  scrollToSection(sectionId: string): void {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   }
-
-  // fetchUsers() {
-  //   this.http.get('http://127.0.0.1:5000/users').subscribe(
-  //     (data: any) => {
-  //       this.users = data;
-  //     },
-  //     (error: any) => {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   );
-  // }
 }
