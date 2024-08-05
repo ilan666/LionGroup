@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { ScrollVisibleDirective } from '../../directives/scrollVisible.directive';
 
 @Component({
   selector: 'app-contact',
-  standalone: true,
-  imports: [],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: [
+    './contact.component.scss',
+    '../../directives/scrollVisible.directive.css',
+  ],
 })
-export class ContactComponent {
-
-}
+export class ContactComponent {}

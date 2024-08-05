@@ -1,0 +1,145 @@
+.about-container {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: #34495e;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  padding-top: 60px;
+  background: #f7f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ecf0f1;
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: scale(1.02);
+}
+
+.intro h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.intro p {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.intro .highlight {
+  color: #3498db;
+  font-weight: bold;
+}
+
+h2 {
+  color: #2980b9;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+ul,
+ol {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 15px;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  background: #3498db;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+address {
+  font-style: normal;
+  margin-top: 10px;
+}
+
+address strong {
+  display: block;
+  font-weight: 500;
+}
+
+.social-media ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social-media ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media ul li a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Adding image and card style for the team section */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  flex: 1 1 calc(33.333% - 20px);
+  margin: 10px;
+  padding: 15px;
+  background: #2c3e50;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.team-member:hover {
+  background: #3d566b;
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-member h3 {
+  font-size: 1.2em;
+  color: #ecf0f1;
+  margin: 10px 0;
+}
+
+.team-member p {
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #ecf0f1;
+}

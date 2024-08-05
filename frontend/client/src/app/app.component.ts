@@ -7,18 +7,29 @@ import {
   PLATFORM_ID,
   Renderer2,
 } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import {
+  NavigationEnd,
+  Router,
+  RouterModule,
+  RouterOutlet,
+} from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { ScrollVisibleDirective } from './directives/scrollVisible.directive';
+import { ScrollService } from './services/scroll.service';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, RouterModule, CommonModule],
+  imports: [RouterOutlet, RouterModule, CommonModule, ScrollVisibleDirective],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: [
+    './app.component.scss',
+    './directives/scrollVisible.directive.css',
+  ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'client';
   currentRoute: string;
 
@@ -29,12 +40,41 @@ export class AppComponent {
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
     @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private scrollService: ScrollService,
+    private router: Router
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     if (this.isBrowser) {
       this.previousScrollPosition = window.pageYOffset;
     }
+  }
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.scrollService.scrollToTop(); // Or use window.scrollTo(0, 0) directly here
+      });
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.router.events
+        .pipe(filter((event) => event instanceof NavigationEnd))
+        .subscribe(() => {
+          this.resetAnimations();
+        });
+    }
+  }
+
+  private resetAnimations(): void {
+    const elements = document.querySelectorAll('[appScrollVisible]');
+    elements.forEach((element) => {
+      if (element instanceof HTMLElement) {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        // Reattach the directive logic here if needed
+        element.dispatchEvent(new Event('resetAnimation'));
+      }
+    });
   }
 
   toggleNavbar() {

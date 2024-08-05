@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollVisibleDirective } from '../../directives/scrollVisible.directive';
 
 @Component({
   selector: 'app-about',
-  standalone: true,
-  imports: [],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrls: [
+    './about.component.scss',
+    '../../directives/scrollVisible.directive.css',
+  ],
 })
-export class AboutComponent {
-
-}
+export class AboutComponent {}

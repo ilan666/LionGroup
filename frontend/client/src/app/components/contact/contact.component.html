@@ -1,2 +1,83 @@
-<h2>Contact</h2>
-<p>This is the Cotact page.</p>
+<div class="contact-container">
+  <section class="intro">
+    <h1 class="scroll-element" appScrollVisible>Contact Us</h1>
+    <p class="scroll-element" appScrollVisible>
+      We'd love to hear from you! Please fill out the form below and we'll get
+      in touch with you as soon as possible.
+    </p>
+  </section>
+
+  <section class="contact-form">
+    <form>
+      <div class="form-group scroll-element" appScrollVisible>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name"
+          required
+        />
+      </div>
+      <div class="form-group scroll-element" appScrollVisible>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your email"
+          required
+        />
+      </div>
+      <div class="form-group scroll-element" appScrollVisible>
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Subject"
+          required
+        />
+      </div>
+      <div class="form-group scroll-element" appScrollVisible>
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Your message"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn scroll-element" appScrollVisible>
+        Send Message
+      </button>
+    </form>
+  </section>
+
+  <section class="contact-info">
+    <h2 class="scroll-element" appScrollVisible>Our Contact Information</h2>
+    <address class="scroll-element" appScrollVisible>
+      <strong>Address:</strong> Some address<br />
+      <strong>Phone:</strong> Some phone<br />
+      <strong>Email:</strong>
+      <a href="mailto:contact@LionGroup.com">contact&#64;LionGroup.com</a>
+    </address>
+    <div class="social-media scroll-element" appScrollVisible>
+      <h3>Follow us on social media:</h3>
+      <ul>
+        <li>
+          <a href="https://twitter.com/LionGroup" target="_blank">Twitter</a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/company/LionGroup" target="_blank"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a href="https://facebook.com/LionGroup" target="_blank">Facebook</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
