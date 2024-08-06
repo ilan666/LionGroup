@@ -3,10 +3,18 @@
   <ul class="nav-links">
     <li>
       <a
-        routerLink="/terms"
-        [ngClass]="{ active: currentRoute === 'terms' }"
-        (click)="setCurrentRoute('terms')"
-        >Terms of service</a
+        routerLink="/home"
+        [ngClass]="{ active: currentRoute === 'home' }"
+        (click)="setCurrentRoute('home')"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/portfolio"
+        [ngClass]="{ active: currentRoute === 'portfolio' }"
+        (click)="setCurrentRoute('portfolio')"
+        >Our Portfolio</a
       >
     </li>
     <li>
@@ -19,10 +27,26 @@
     </li>
     <li>
       <a
+        routerLink="/faqs"
+        [ngClass]="{ active: currentRoute === 'faqs' }"
+        (click)="setCurrentRoute('faqs')"
+        >FAQ'S</a
+      >
+    </li>
+    <li>
+      <a
         routerLink="/about"
         [ngClass]="{ active: currentRoute === 'about' }"
         (click)="setCurrentRoute('about')"
         >About</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/terms"
+        [ngClass]="{ active: currentRoute === 'terms' }"
+        (click)="setCurrentRoute('terms')"
+        >Terms of service</a
       >
     </li>
   </ul>
@@ -47,7 +71,7 @@
           <a href="/contact">Contact</a>
         </li>
         <li class="scroll-element" appScrollVisible>
-          <a href="/terms-of-service">Terms of Service</a>
+          <a href="/terms">Terms of Service</a>
         </li>
       </ul>
     </div>

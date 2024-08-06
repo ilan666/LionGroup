@@ -17,32 +17,55 @@ import { isPlatformBrowser } from '@angular/common';
 export class ScrollOffsetDirective implements OnInit, OnDestroy {
   private previousScrollY = 0; // Previous scroll position
   private translateY = 0; // Current translateY value for this element
+  private isActive = false; // Whether the directive is active
+
+  private boundOnScroll: () => void;
+  private boundCheckScreenSizeAndToggleDirective: () => void;
 
   constructor(
     private el: ElementRef,
     private renderer: Renderer2,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) {
+    this.boundOnScroll = this.onScroll.bind(this);
+    this.boundCheckScreenSizeAndToggleDirective =
+      this.checkScreenSizeAndToggleDirective.bind(this);
+  }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.setupScrollEvent();
+      // this.setupScrollEvent();
+      this.checkScreenSizeAndToggleDirective();
+
+      // Listen to window resize events
+      window.addEventListener(
+        'resize',
+        this.checkScreenSizeAndToggleDirective.bind(this)
+      );
     }
   }
 
   ngOnDestroy(): void {
     if (isPlatformBrowser(this.platformId)) {
       window.removeEventListener('scroll', this.onScroll.bind(this));
+      window.removeEventListener(
+        'resize',
+        this.checkScreenSizeAndToggleDirective.bind(this)
+      );
     }
   }
 
   private setupScrollEvent(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      window.addEventListener('scroll', this.onScroll.bind(this));
+    if (isPlatformBrowser(this.platformId) && this.isActive) {
+      window.addEventListener('scroll', this.boundOnScroll);
     }
   }
 
   private onScroll(): void {
+    if (!this.isActive) {
+      return;
+    }
+
     const currentScrollY = window.scrollY; // Current scroll position
     const index = Array.from(
       this.el.nativeElement.parentElement.children
@@ -69,5 +92,18 @@ export class ScrollOffsetDirective implements OnInit, OnDestroy {
 
     // Update previous scroll position
     this.previousScrollY = currentScrollY;
+  }
+
+  private checkScreenSizeAndToggleDirective(): void {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth < 1024 && this.isActive) {
+      this.isActive = false;
+      window.removeEventListener('scroll', this.boundOnScroll);
+      this.renderer.setStyle(this.el.nativeElement, 'transform', ''); // reset transform
+    } else if (screenWidth >= 1024 && !this.isActive) {
+      this.isActive = true;
+      this.setupScrollEvent();
+    }
   }
 }

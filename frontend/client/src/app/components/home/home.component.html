@@ -40,12 +40,13 @@
       [showClass]="'show'"
       [hideClass]="'hide'"
       [delay]="'0.7s'"
+      (click)="scrollToSection('services')"
     >
       Let's start!
     </button>
   </div>
 </section>
-<section class="short-section">
+<section class="short-section" id="services">
   <div class="section-container">
     <div class="header-container">
       <h1 class="header-1 scroll-element" appScrollVisible>Our Services</h1>
@@ -53,9 +54,9 @@
         Click on one to jump right to!
       </h3>
     </div>
-    <div class="service-cards scroll-element" appScrollVisible>
+    <div class="service-cards">
       <div
-        class="service-card"
+        class="service-card scroll-element"
         appScrollOffset
         (click)="scrollToSection('web-design')"
       >
@@ -64,10 +65,11 @@
           <h4>Web Design</h4>
           <p>Stunning and functional web designs to elevate your brand.</p>
         </div>
-        <button class="primary-button">Learn more..</button>
+        <button class="primary-button">Learn more</button>
       </div>
       <div
-        class="service-card"
+        class="service-card scroll-element"
+        appScrollVisible
         appScrollOffset
         (click)="scrollToSection('api-development')"
       >
@@ -76,10 +78,11 @@
           <h4>API Development</h4>
           <p>Robust API solutions for seamless integration.</p>
         </div>
-        <button class="primary-button">Learn more..</button>
+        <button class="primary-button">Learn more</button>
       </div>
       <div
-        class="service-card"
+        class="service-card scroll-element"
+        appScrollVisible
         appScrollOffset
         (click)="scrollToSection('seo-optimization')"
       >
@@ -88,10 +91,11 @@
           <h4>SEO Optimization</h4>
           <p>Enhancing your visibility and rankings on search engines.</p>
         </div>
-        <button class="primary-button">Learn more..</button>
+        <button class="primary-button">Learn more</button>
       </div>
       <div
-        class="service-card"
+        class="service-card scroll-element"
+        appScrollVisible
         appScrollOffset
         (click)="scrollToSection('e-commerce')"
       >
@@ -100,10 +104,11 @@
           <h4>E-Commerce Solutions</h4>
           <p>Comprehensive e-commerce systems tailored to your needs.</p>
         </div>
-        <button class="primary-button">Learn more..</button>
+        <button class="primary-button">Learn more</button>
       </div>
       <div
-        class="service-card"
+        class="service-card scroll-element"
+        appScrollVisible
         appScrollOffset
         (click)="scrollToSection('bio')"
       >
@@ -114,7 +119,7 @@
             We craft compelling biographies that resonate with your audience.
           </p>
         </div>
-        <button class="primary-button">Learn more..</button>
+        <button class="primary-button">Learn more</button>
       </div>
     </div>
   </div>
@@ -148,6 +153,15 @@
           Ongoing Support and Maintenance
         </li>
       </ul>
+      <button
+        class="primary-button description-button scroll-element"
+        appScrollVisible
+      >
+        Apply for details
+      </button>
+      <a href="/" class="service-link scroll-element" appScrollVisible
+        >Click here to learn more about web design!</a
+      >
     </div>
     <div class="form-container">
       <h3 class="scroll-element" appScrollVisible>
@@ -254,6 +268,15 @@
           Ongoing Maintenance and Support
         </li>
       </ul>
+      <button
+        class="primary-button description-button scroll-element"
+        appScrollVisible
+      >
+        Apply for details
+      </button>
+      <a href="/" class="service-link scroll-element" appScrollVisible
+        >Click here to learn more about API Developing!</a
+      >
     </div>
   </div>
 </section>
@@ -286,6 +309,15 @@
           Performance Tracking and Analytics
         </li>
       </ul>
+      <button
+        class="primary-button description-button scroll-element"
+        appScrollVisible
+      >
+        Apply for details
+      </button>
+      <a href="/" class="service-link scroll-element" appScrollVisible
+        >Click here to learn more about SEO Optimization!</a
+      >
     </div>
     <div class="form-container">
       <h3 class="scroll-element" appScrollVisible>
@@ -395,6 +427,15 @@
           Security Best Practices for Online Transactions
         </li>
       </ul>
+      <button
+        class="primary-button description-button scroll-element"
+        appScrollVisible
+      >
+        Apply for details
+      </button>
+      <a href="/" class="service-link scroll-element" appScrollVisible
+        >Click here to learn more about E-Commerce!</a
+      >
     </div>
   </div>
 </section>
@@ -426,6 +467,15 @@
           Formatting for Various Platforms
         </li>
       </ul>
+      <button
+        class="primary-button description-button scroll-element"
+        appScrollVisible
+      >
+        Apply for details
+      </button>
+      <a href="/" class="service-link scroll-element" appScrollVisible
+        >Click here to learn more about biography!</a
+      >
     </div>
     <div class="form-container">
       <h3 class="scroll-element" appScrollVisible>

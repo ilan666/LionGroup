@@ -93,7 +93,7 @@ export class AppComponent implements OnInit {
       if (this.previousScrollPosition > currentScrollPosition) {
         navbar.style.top = '0';
       } else {
-        navbar.style.top = '-80px'; // adjust based on your navbar height
+        navbar.style.top = '-85px'; // adjust based on your navbar height
       }
 
       this.previousScrollPosition = currentScrollPosition;
