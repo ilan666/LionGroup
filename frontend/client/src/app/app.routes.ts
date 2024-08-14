@@ -39,5 +39,12 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./components/faqs/faqs.module').then((m) => m.FaqsModule),
   },
+  {
+    path: 'services',
+    loadChildren: () =>
+      import('./components/services/services.module').then(
+        (m) => m.ServicesModule
+      ),
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

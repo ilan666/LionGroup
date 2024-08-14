@@ -19,8 +19,12 @@ html {
 }
 
 .logo {
-  color: white;
-  font-size: 24px;
+  background-image: url("../../assets/LionGroupLogoSmall.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 140px;
 }
 
 .nav-links {
@@ -28,6 +32,7 @@ html {
   display: flex;
   margin: 0;
   padding: 0px 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-links li {
@@ -42,13 +47,15 @@ html {
 }
 
 .nav-links a:hover {
-  transition: all 0.1s ease-in-out;
   color: #ff6347;
+  transition: all 0.1s ease-in-out;
+  border-bottom: 1px solid #ff6347;
   cursor: pointer;
 }
 
 .active {
   color: #ff6347 !important;
+  border-bottom: 1px solid #ff6347;
 }
 
 .burger {

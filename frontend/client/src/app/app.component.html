@@ -1,12 +1,20 @@
 <nav class="navbar">
-  <a class="logo" routerLink="/" (click)="setCurrentRoute('home')">LionGroup</a>
+  <a class="logo" routerLink="/" (click)="setCurrentRoute('home')"></a>
   <ul class="nav-links">
     <li>
       <a
         routerLink="/home"
         [ngClass]="{ active: currentRoute === 'home' }"
         (click)="setCurrentRoute('home')"
-        >Home</a
+        >דף בית</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/services"
+        [ngClass]="{ active: currentRoute === 'services' }"
+        (click)="setCurrentRoute('services')"
+        >השירותים שלנו</a
       >
     </li>
     <li>
@@ -14,7 +22,7 @@
         routerLink="/portfolio"
         [ngClass]="{ active: currentRoute === 'portfolio' }"
         (click)="setCurrentRoute('portfolio')"
-        >Our Portfolio</a
+        >פרוייקטים</a
       >
     </li>
     <li>
@@ -22,7 +30,7 @@
         routerLink="/contact"
         [ngClass]="{ active: currentRoute === 'contact' }"
         (click)="setCurrentRoute('contact')"
-        >Contact</a
+        >צור קשר</a
       >
     </li>
     <li>
@@ -30,7 +38,7 @@
         routerLink="/faqs"
         [ngClass]="{ active: currentRoute === 'faqs' }"
         (click)="setCurrentRoute('faqs')"
-        >FAQ'S</a
+        >שאלות ותשובות</a
       >
     </li>
     <li>
@@ -38,7 +46,7 @@
         routerLink="/about"
         [ngClass]="{ active: currentRoute === 'about' }"
         (click)="setCurrentRoute('about')"
-        >About</a
+        >אודות</a
       >
     </li>
     <li>
@@ -46,7 +54,7 @@
         routerLink="/terms"
         [ngClass]="{ active: currentRoute === 'terms' }"
         (click)="setCurrentRoute('terms')"
-        >Terms of service</a
+        >תקנון</a
       >
     </li>
   </ul>

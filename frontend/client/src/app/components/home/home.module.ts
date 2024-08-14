@@ -6,6 +6,7 @@ import { ScrollSlideDirective } from '../../directives/scrollSlide.directive';
 import { ScrollVisibleDirective } from '../../directives/scrollVisible.directive';
 import { ScrollOffsetDirective } from '../../directives/scrollOffset.directive';
 import { RouterModule } from '@angular/router';
+import { HorizontalScrollDirective } from '../../directives/horizontalScroll.directive';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     ScrollSlideDirective,
     ScrollVisibleDirective,
     ScrollOffsetDirective,
+    HorizontalScrollDirective,
     RouterModule.forChild([{ path: '', component: HomeComponent }]),
   ],
   declarations: [HomeComponent],
