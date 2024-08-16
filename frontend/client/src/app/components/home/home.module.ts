@@ -7,6 +7,7 @@ import { ScrollVisibleDirective } from '../../directives/scrollVisible.directive
 import { ScrollOffsetDirective } from '../../directives/scrollOffset.directive';
 import { RouterModule } from '@angular/router';
 import { HorizontalScrollDirective } from '../../directives/horizontalScroll.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { HorizontalScrollDirective } from '../../directives/horizontalScroll.dir
     ScrollVisibleDirective,
     ScrollOffsetDirective,
     HorizontalScrollDirective,
+    ReactiveFormsModule,
     RouterModule.forChild([{ path: '', component: HomeComponent }]),
   ],
   declarations: [HomeComponent],

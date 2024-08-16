@@ -1,6 +1,6 @@
-<section class="hero-section">
-  <div class="main-photo"></div>
-  <div class="section-content">
+<section class="short-section hero-section">
+  <div class="hero-photo"></div>
+  <div class="hero-section-content">
     <div
       class="logo-image hidden-left"
       appScrollSlide
@@ -9,7 +9,7 @@
       [delay]="'0.2s'"
     ></div>
     <h4
-      class="home-header-4 hidden-left"
+      class="hidden-left"
       appScrollSlide
       [showClass]="'show'"
       [hideClass]="'hide'"
@@ -18,20 +18,51 @@
       ?עדיין לא איתנו
     </h4>
     <button
-      class="homeBtn hidden-left"
+      class="primary-button hidden-left"
       appScrollSlide
       [showClass]="'show'"
       [hideClass]="'hide'"
       [delay]="'0.7s'"
-      (click)="scrollToSection('services')"
+      (click)="showContactWindow = true"
     >
       &larr; !הצטרפו אלינו
     </button>
-    <div class="button-container">
+    <div class="hero-arrow-button-container">
       <button class="arrow-button" (click)="scrollToSection('about')">
         <span class="arrow">&#8595;</span>
         <span class="arrow">&#8595;</span>
       </button>
+    </div>
+  </div>
+  <div class="contact-window" *ngIf="showContactWindow">
+    <div class="contact-window-form-container scroll-element" appScrollVisible>
+      <button (click)="showContactWindow = false" class="contact-window-exit">
+        X
+      </button>
+
+      <h1>השאירו פרטים ונדבר איתכם</h1>
+
+      <form autocapitalize="off" autocomplete="off">
+        <div class="form-group scroll-element">
+          <input
+            type="text"
+            id="fullNameWindow"
+            name="fullNameWindow"
+            required
+          />
+          <label for="fullNameWindow">:שם מלא</label>
+        </div>
+        <div class="form-group scroll-element">
+          <input type="email" id="email" name="email" required />
+          <label for="email">:אימייל</label>
+        </div>
+        <div class="form-group scroll-element">
+          <input type="tel" id="phone" name="phone" required />
+          <label for="phone">:טלפון</label>
+        </div>
+
+        <button type="submit" class="primary-button">שליחה</button>
+      </form>
     </div>
   </div>
 </section>
@@ -50,6 +81,8 @@
       אנחנו שמים דגש על שירות אישי ויתן ליווי צמוד, עם שקיפות מלאה בכל אורך
       הדרך. איתנו, אתה מקבל יותר מאתר – אתה מקבל שותף לצמיחה דיגיטלית חזקה
     </p>
+    <div class="short-description-photos1"></div>
+    <div class="short-description-photos2"></div>
   </div>
 </section>
 <section class="short-section" id="services">
@@ -64,7 +97,7 @@
       <div
         class="service-card scroll-element"
         appScrollOffset
-        (click)="scrollToSection('web-design')"
+        (click)="scrollToServicesSection(0)"
       >
         <div class="header-container">
           <i class="services-icon material-icons">desktop_windows</i>
@@ -77,7 +110,7 @@
         class="service-card scroll-element"
         appScrollVisible
         appScrollOffset
-        (click)="scrollToSection('api-development')"
+        (click)="scrollToServicesSection(1)"
       >
         <div class="header-container">
           <i class="services-icon material-icons">code</i>
@@ -90,7 +123,7 @@
         class="service-card scroll-element"
         appScrollVisible
         appScrollOffset
-        (click)="scrollToSection('seo-optimization')"
+        (click)="scrollToServicesSection(2)"
       >
         <div class="header-container">
           <i class="services-icon material-icons">query_stats</i>
@@ -103,7 +136,7 @@
         class="service-card scroll-element"
         appScrollVisible
         appScrollOffset
-        (click)="scrollToSection('e-commerce')"
+        (click)="scrollToServicesSection(3)"
       >
         <div class="header-container">
           <i class="services-icon material-icons">shopping_cart</i>
@@ -116,7 +149,7 @@
         class="service-card scroll-element"
         appScrollVisible
         appScrollOffset
-        (click)="scrollToSection('bio')"
+        (click)="scrollToServicesSection(4)"
       >
         <div class="header-container">
           <i class="services-icon material-icons">person</i>
@@ -522,404 +555,550 @@
     </div>
   </div>
 </section> -->
-<section class="short-section">
-  <div class="portfolio-container">
+<section class="short-section services-section" id="scroll-section">
+  <div class="services-container">
     <div class="scroll-sections">
-      <section class="slide-section" id="web-design">
+      <section class="slide-section">
         <div class="web-design-photo"></div>
-        <div class="sub-section-content">
-          <div class="description">
-            <h2 class="scroll-element" appScrollVisible>Web Design</h2>
-            <p class="scroll-element" appScrollVisible>
-              Our web design services focus on creating stunning, efficient, and
-              user-friendly websites that represent your brand effectively. With
-              an emphasis on modern aesthetics and functionality, we ensure your
-              online presence stands out.
-            </p>
-            <ul>
-              <li class="scroll-element" appScrollVisible>
-                Responsive Design for All Devices
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Custom UI/UX Designs Tailored to Your Needs
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Integration of Latest Design Trends
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                User-Centric Layouts for Enhanced Engagement
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Ongoing Support and Maintenance
-              </li>
-            </ul>
-            <button
-              class="primary-button description-button scroll-element"
-              appScrollVisible
-            >
-              Apply for details
-            </button>
-            <a href="/" class="service-link scroll-element" appScrollVisible
-              >Click here to learn more about web design!</a
-            >
-          </div>
-          <div class="form-container">
-            <h3 class="scroll-element" appScrollVisible>
-              Contact Us for Your Web Design Needs:
-            </h3>
-            <form class="contact-form">
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" />
-              </div>
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="description">Description of Request:</label>
-                <textarea
-                  id="description"
-                  name="description"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="primary-button scroll-element"
-                appScrollVisible
+        <div class="description">
+          <h2 class="scroll-element" appScrollVisible>עיצוב אתרים</h2>
+          <p class="scroll-element" appScrollVisible>
+            שירותי עיצוב אתרים שלנו מתמקדים ביצירת אתרים מדהימים, יעילים
+            וידידותיים למשתמש המייצגים את המותג שלך ביעילות. עם דגש על אסתטיקה
+            ופונקציונליות מודרנית, אנו מבטיחים שהנוכחות המקוונת שלך בולטת
+          </p>
+          <ul>
+            <li class="scroll-element" appScrollVisible>
+              עיצוב רספונסיבי לכל המכשירים
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              עיצובי UI/UX מותאמים אישית לצרכים שלך
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              שילוב של מגמות עיצוב אחרונות
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              פריסות ממוקדות משתמש עבור מעורבות מוגברת
+            </li>
+            <li class="scroll-element" appScrollVisible>תמיכה ותחזוקה שוטפת</li>
+          </ul>
+          <button class="primary-button" appScrollVisible>לפרטים נוספים</button>
+        </div>
+        <div class="form-container">
+          <h3 class="scroll-element" appScrollVisible>
+            !השאירו פרטים וניצור עמכם קשר
+          </h3>
+          <form
+            class="contact-form"
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            autocomplete="off"
+            autocapitalize="off"
+          >
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                formControlName="name"
+                required
+              />
+              <label for="name">:שם</label>
+              <div
+                *ngIf="
+                  contactForm.get('name')?.invalid &&
+                  (contactForm.get('name')?.dirty ||
+                    contactForm.get('name')?.touched)
+                "
               >
-                Submit
-              </button>
-            </form>
-          </div>
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('name')?.errors?.['required']"
+                  >שם נחוץ.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                formControlName="email"
+                required
+              />
+              <label for="email">:אימייל</label>
+              <div
+                *ngIf="
+                  contactForm.get('email')?.invalid &&
+                  (contactForm.get('email')?.dirty ||
+                    contactForm.get('email')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('email')?.errors?.['required']"
+                  >אימייל נחוץ.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                formControlName="phone"
+                required
+              />
+              <label for="phone">:טלפון</label>
+              <div
+                *ngIf="
+                  contactForm.get('phone')?.invalid &&
+                  (contactForm.get('phone')?.dirty ||
+                    contactForm.get('phone')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('phone')?.errors?.['required']"
+                  >טלפון נחוץ.</small
+                >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('phone')?.errors?.['pattern']"
+                  >טלפון מבוסס מספרים בלבד.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                required
+                formControlName="description"
+              ></textarea>
+              <label for="description">:תיאור של הבקשה</label>
+            </div>
+
+            <button type="submit" class="primary-button" appScrollVisible>
+              שליחה
+            </button>
+          </form>
         </div>
       </section>
-      <section class="slide-section" id="api-development">
+      <section class="slide-section">
         <div class="api-photo"></div>
-        <div class="sub-section-content">
-          <div class="form-container">
-            <h3 class="scroll-element" appScrollVisible>
-              Contact Us for API Development:
-            </h3>
-            <form class="contact-form">
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="description">Description of Request:</label>
-                <textarea
-                  id="description"
-                  name="description"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="primary-button scroll-element"
-                appScrollVisible
+        <div class="description">
+          <h2 class="scroll-element" appScrollVisible>API פיתוח</h2>
+          <p class="scroll-element" appScrollVisible>
+            אנו מתמחים ביצירת ממשקי שרת חזקים וניתנים להרחבה המאפשרים אינטגרציה
+            חלקה בין היישומים והשירותים שלך. שלנו הפתרונות מיועדים לביצועים,
+            אבטחה ואמינות
+          </p>
+          <ul>
+            <li class="scroll-element" appScrollVisible>
+              עיצוב ויישום שרת תמיכה בהפרדה מוחלטת בין שרת לקוח
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              תיעוד שרת ובדיקות אינטגרציה עם שירותי צד שלישי
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              תכונות אבטחה, כולל אימות
+            </li>
+            <li class="scroll-element" appScrollVisible>תחזוקה ותמיכה שוטפת</li>
+          </ul>
+          <button class="primary-button" appScrollVisible>לפרטים נוספים</button>
+        </div>
+        <div class="form-container">
+          <h3 class="scroll-element" appScrollVisible>
+            !השאירו פרטים וניצור עמכם קשר
+          </h3>
+          <form
+            class="contact-form"
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            autocomplete="off"
+            autocapitalize="off"
+          >
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                formControlName="name"
+                required
+              />
+              <label for="name">:שם</label>
+              <div
+                *ngIf="
+                  contactForm.get('name')?.invalid &&
+                  (contactForm.get('name')?.dirty ||
+                    contactForm.get('name')?.touched)
+                "
               >
-                Submit
-              </button>
-            </form>
-          </div>
-          <div class="description">
-            <h2 class="scroll-element" appScrollVisible>API Development</h2>
-            <p class="scroll-element" appScrollVisible>
-              We specialize in crafting robust and scalable APIs that enable
-              seamless integration between your applications and services. Our
-              solutions are designed for performance, security, and reliability.
-            </p>
-            <ul>
-              <li class="scroll-element" appScrollVisible>
-                RESTful API Design and Implementation
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                API Documentation and Testing
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Integration with Third-Party Services
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Security Features, Including Authentication
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Ongoing Maintenance and Support
-              </li>
-            </ul>
-            <button
-              class="primary-button description-button scroll-element"
-              appScrollVisible
-            >
-              Apply for details
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('name')?.errors?.['required']"
+                  >שם נחוץ.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                formControlName="email"
+                required
+              />
+              <label for="email">:אימייל</label>
+              <div
+                *ngIf="
+                  contactForm.get('email')?.invalid &&
+                  (contactForm.get('email')?.dirty ||
+                    contactForm.get('email')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('email')?.errors?.['required']"
+                  >אימייל נחוץ.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                formControlName="phone"
+                required
+              />
+              <label for="phone">:טלפון</label>
+              <div
+                *ngIf="
+                  contactForm.get('phone')?.invalid &&
+                  (contactForm.get('phone')?.dirty ||
+                    contactForm.get('phone')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('phone')?.errors?.['required']"
+                  >טלפון נחוץ.</small
+                >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('phone')?.errors?.['pattern']"
+                  >טלפון מבוסס מספרים בלבד.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                required
+                formControlName="description"
+              ></textarea>
+              <label for="description">:תיאור של הבקשה</label>
+            </div>
+
+            <button type="submit" class="primary-button" appScrollVisible>
+              שליחה
             </button>
-            <a href="/" class="service-link scroll-element" appScrollVisible
-              >Click here to learn more about API Developing!</a
-            >
-          </div>
+          </form>
         </div>
       </section>
-      <section class="slide-section" id="seo-optimization">
+      <section class="slide-section">
         <div class="seo-photo"></div>
-        <div class="sub-section-content">
-          <div class="description">
-            <h2 class="scroll-element" appScrollVisible>SEO Optimization</h2>
-            <p class="scroll-element" appScrollVisible>
-              Our SEO optimization services help improve your website's
-              visibility on search engines, driving traffic and increasing
-              conversion rates. Our tailored strategies ensure your brand stands
-              out in the digital landscape.
-            </p>
-            <ul>
-              <li class="scroll-element" appScrollVisible>
-                Keyword Research and Analysis
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                On-Page and Off-Page Optimization
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Link Building Strategies
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Content Optimization for Better Engagement
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Performance Tracking and Analytics
-              </li>
-            </ul>
-            <button
-              class="primary-button description-button scroll-element"
-              appScrollVisible
-            >
-              Apply for details
-            </button>
-            <a href="/" class="service-link scroll-element" appScrollVisible
-              >Click here to learn more about SEO Optimization!</a
-            >
-          </div>
-          <div class="form-container">
-            <h3 class="scroll-element" appScrollVisible>
-              Contact Us for SEO Services:
-            </h3>
-            <form class="contact-form">
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="description">Description of Request:</label>
-                <textarea
-                  id="description"
-                  name="description"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="primary-button scroll-element"
-                appScrollVisible
+        <div class="description">
+          <h2 class="scroll-element" appScrollVisible>
+            אופטימיזציה למנועי חיפוש
+          </h2>
+          <p class="scroll-element" appScrollVisible>
+            שירותי האופטימיזציה למנועי חיפוש שלנו עוזרים לשפר את הנראות של האתר
+            שלך במנועי חיפוש, להניע תנועה ולהגדיל את שיעורי ההמרה. האסטרטגיות
+            המותאמות שלנו מבטיחות שהמותג שלך בולט בנוף הדיגיטלי
+          </p>
+          <ul>
+            <li class="scroll-element" appScrollVisible>
+              מחקר וניתוח מילות מפתח
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              On-Page ו-Off-Page אופטימיזציית
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              אסטרטגיות לבניית קישורים
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              אופטימיזציה של תוכן למעורבות טובה יותר
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              מעקב אחר ביצועים וניתוח
+            </li>
+          </ul>
+          <button class="primary-button" appScrollVisible>לפרטים נוספים</button>
+        </div>
+        <div class="form-container">
+          <h3 class="scroll-element" appScrollVisible>
+            !השאירו פרטים וניצור עמכם קשר
+          </h3>
+          <form
+            class="contact-form"
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            autocomplete="off"
+            autocapitalize="off"
+          >
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                formControlName="name"
+                required
+              />
+              <label for="name">:שם</label>
+              <div
+                *ngIf="
+                  contactForm.get('name')?.invalid &&
+                  (contactForm.get('name')?.dirty ||
+                    contactForm.get('name')?.touched)
+                "
               >
-                Submit
-              </button>
-            </form>
-          </div>
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('name')?.errors?.['required']"
+                  >שם נחוץ.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                formControlName="email"
+                required
+              />
+              <label for="email">:אימייל</label>
+              <div
+                *ngIf="
+                  contactForm.get('email')?.invalid &&
+                  (contactForm.get('email')?.dirty ||
+                    contactForm.get('email')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('email')?.errors?.['required']"
+                  >אימייל נחוץ.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                formControlName="phone"
+                required
+              />
+              <label for="phone">:טלפון</label>
+              <div
+                *ngIf="
+                  contactForm.get('phone')?.invalid &&
+                  (contactForm.get('phone')?.dirty ||
+                    contactForm.get('phone')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('phone')?.errors?.['required']"
+                  >טלפון נחוץ.</small
+                >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('phone')?.errors?.['pattern']"
+                  >טלפון מבוסס מספרים בלבד.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                required
+                formControlName="description"
+              ></textarea>
+              <label for="description">:תיאור של הבקשה</label>
+            </div>
+
+            <button type="submit" class="primary-button" appScrollVisible>
+              שליחה
+            </button>
+          </form>
         </div>
       </section>
-      <section class="slide-section" id="e-commerce">
+      <section class="slide-section">
         <div class="e-commerce-photo"></div>
-        <div class="sub-section-content">
-          <div class="form-container">
-            <h3 class="scroll-element" appScrollVisible>
-              Contact Us for E-Commerce Solutions:
-            </h3>
-            <form class="contact-form">
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="description">Description of Request:</label>
-                <textarea
-                  id="description"
-                  name="description"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="primary-button scroll-element"
-                appScrollVisible
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-          <div class="description">
-            <h2 class="scroll-element" appScrollVisible>
-              E-Commerce Solutions
-            </h2>
-            <p class="scroll-element" appScrollVisible>
-              We provide comprehensive e-commerce solutions tailored to your
-              business needs, ensuring a smooth shopping experience for your
-              customers while driving growth for your business.
-            </p>
-            <ul>
-              <li class="scroll-element" appScrollVisible>
-                Custom E-Commerce Website Development
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Integration with Payment Gateways
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Shopping Cart Implementation
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                User-Friendly Product Management
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Security Best Practices for Online Transactions
-              </li>
-            </ul>
-            <button
-              class="primary-button description-button scroll-element"
-              appScrollVisible
-            >
-              Apply for details
-            </button>
-            <a href="/" class="service-link scroll-element" appScrollVisible
-              >Click here to learn more about E-Commerce!</a
-            >
-          </div>
+        <div class="description">
+          <h2 class="scroll-element" appScrollVisible>מסחר דיגיטלי</h2>
+          <p class="scroll-element" appScrollVisible>
+            אנו מספקים פתרונות מסחר אלקטרוני מקיפים המותאמים לך צרכי העסק, מה
+            שמבטיח חווית קנייה חלקה עבורך לקוחות תוך כדי צמיחה של העסק שלך
+          </p>
+          <ul>
+            <li class="scroll-element" appScrollVisible>
+              פיתוח אתרי מסחר אלקטרוני בהתאמה אישית
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              אינטגרציה עם שערי תשלום
+            </li>
+            <li class="scroll-element" appScrollVisible>יישום עגלת קניות</li>
+            <li class="scroll-element" appScrollVisible>
+              ניהול מוצר ידידותי למשתמש
+            </li>
+            <li class="scroll-element" appScrollVisible>
+              שיטות עבודה מומלצות לאבטחה עבור עסקאות מקוונות
+            </li>
+          </ul>
+          <button class="primary-button" appScrollVisible>לפרטים נוספים</button>
         </div>
-      </section>
-      <section class="slide-section" id="bio">
-        <div class="bio-photo"></div>
-        <div class="sub-section-content">
-          <div class="description">
-            <h2 class="scroll-element" appScrollVisible>Bio</h2>
-            <p class="scroll-element" appScrollVisible>
-              We specialize in crafting compelling biographies that resonate
-              with your audience. Our writing not only highlights your
-              achievements but also connects with readers at an emotional level.
-            </p>
-            <ul>
-              <li class="scroll-element" appScrollVisible>
-                Personalized Biography Writing Services
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Engaging Storytelling Techniques
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Focus on Authenticity and Voice
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Professional Editing and Proofreading
-              </li>
-              <li class="scroll-element" appScrollVisible>
-                Formatting for Various Platforms
-              </li>
-            </ul>
-            <button
-              class="primary-button description-button scroll-element"
-              appScrollVisible
-            >
-              Apply for details
-            </button>
-            <a href="/" class="service-link scroll-element" appScrollVisible
-              >Click here to learn more about biography!</a
-            >
-          </div>
-          <div class="form-container">
-            <h3 class="scroll-element" appScrollVisible>
-              Contact Us for Your Biography Needs:
-            </h3>
-            <form class="contact-form">
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" />
-              </div>
-
-              <div class="form-group scroll-element" appScrollVisible>
-                <label for="description">Description of Request:</label>
-                <textarea
-                  id="description"
-                  name="description"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="primary-button scroll-element"
-                appScrollVisible
+        <div class="form-container">
+          <h3 class="scroll-element" appScrollVisible>
+            !השאירו פרטים וניצור עמכם קשר
+          </h3>
+          <form
+            class="contact-form"
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            autocomplete="off"
+            autocapitalize="off"
+          >
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                formControlName="name"
+                required
+              />
+              <label for="name">:שם</label>
+              <div
+                *ngIf="
+                  contactForm.get('name')?.invalid &&
+                  (contactForm.get('name')?.dirty ||
+                    contactForm.get('name')?.touched)
+                "
               >
-                Submit
-              </button>
-            </form>
-          </div>
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('name')?.errors?.['required']"
+                  >שם נחוץ.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                formControlName="email"
+                required
+              />
+              <label for="email">:אימייל</label>
+              <div
+                *ngIf="
+                  contactForm.get('email')?.invalid &&
+                  (contactForm.get('email')?.dirty ||
+                    contactForm.get('email')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('email')?.errors?.['required']"
+                  >אימייל נחוץ.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                formControlName="phone"
+                required
+              />
+              <label for="phone">:טלפון</label>
+              <div
+                *ngIf="
+                  contactForm.get('phone')?.invalid &&
+                  (contactForm.get('phone')?.dirty ||
+                    contactForm.get('phone')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('phone')?.errors?.['required']"
+                  >טלפון נחוץ.</small
+                >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('phone')?.errors?.['pattern']"
+                  >טלפון מבוסס מספרים בלבד.</small
+                >
+              </div>
+            </div>
+            <div class="form-group scroll-element" appScrollVisible>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                required
+                formControlName="description"
+              ></textarea>
+              <label for="description">:תיאור של הבקשה</label>
+            </div>
+
+            <button type="submit" class="primary-button" appScrollVisible>
+              שליחה
+            </button>
+          </form>
         </div>
       </section>
     </div>
-    <div class="btn-slider-container">
-      <button class="btn-slider" (click)="previousSection()">&larr;</button>
-      <button class="btn-slider" (click)="nextSection()">&rarr;</button>
+    <button class="btn-slider-left" (click)="previousSection()">&larr;</button>
+    <button class="btn-slider-right" (click)="nextSection()">&rarr;</button>
+  </div>
+</section>
+<section class="long-section">
+  <div class="contact-form-photo">
+    <div class="contact-form-container">
+      <h1 class="scroll-element" appScrollVisible>!צרו איתנו קשר</h1>
+      <h3 class="scroll-element" appScrollVisible>
+        לקבלת ייעוץ השאירו פרטים ונשוב אליכם בהקדם
+      </h3>
+      <form autocomplete="off" autocapitalize="off">
+        <div class="form-group scroll-element" appScrollVisible>
+          <input type="text" id="name" name="name" required />
+          <label for="name">:שם מלא</label>
+        </div>
+        <div class="form-group scroll-element" appScrollVisible>
+          <input type="email" id="email" name="email" required />
+          <label for="email">:אימייל</label>
+        </div>
+        <div class="form-group scroll-element" appScrollVisible>
+          <input type="text" id="subject" name="company" required />
+          <label for="company">:שם העסק</label>
+        </div>
+        <button type="submit" class="primary-button" appScrollVisible>
+          שליחה
+        </button>
+      </form>
     </div>
   </div>
 </section>

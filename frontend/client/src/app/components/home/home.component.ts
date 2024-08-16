@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,27 @@ import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
     './home.component.scss',
     '../../directives/scrollSlide.directive.css',
     '../../directives/scrollVisible.directive.css',
+    './heroSection.scss',
+    './servicesCardsSection.scss',
+    './servicesSection.scss',
+    './aboutSection.scss',
+    './contactSection.scss',
   ],
 })
 export class HomeComponent implements OnInit {
+  contactForm: FormGroup;
   currentIndex: number = 0;
-  totalSections: number = 5;
+  totalSections: number = 4;
+  showContactWindow = false;
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {
+    this.contactForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required], // No built-in validation for syntax
+      phone: ['', Validators.required],
+      description: [''],
+    });
+  }
 
   ngOnInit(): void {}
 
@@ -21,27 +36,17 @@ export class HomeComponent implements OnInit {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-
-      switch (sectionId) {
-        case 'web-design':
-          this.currentIndex = 0;
-          break;
-        case 'api-development':
-          this.currentIndex = 1;
-          break;
-        case 'seo-optimization':
-          this.currentIndex = 2;
-          break;
-        case 'e-commerce':
-          this.currentIndex = 3;
-          break;
-        case 'bio':
-          this.currentIndex = 4;
-          break;
-      }
     }
-
     this.updateSlider();
+  }
+
+  scrollToServicesSection(index: number): void {
+    const section = document.getElementById('scroll-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      this.currentIndex = index;
+      this.updateSlider();
+    }
   }
 
   nextSection() {
@@ -72,6 +77,14 @@ export class HomeComponent implements OnInit {
 
     if (scrollSections) {
       scrollSections.style.transform = `translateX(${translateX})`; // Apply translation
+    }
+  }
+
+  onSubmit() {
+    if (this.contactForm.valid) {
+      console.log(this.contactForm.value); // Handle successful submission here
+    } else {
+      console.log('Form is invalid');
     }
   }
 }

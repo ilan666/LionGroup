@@ -1,56 +1,63 @@
 <nav class="navbar">
   <a class="logo" routerLink="/" (click)="setCurrentRoute('home')"></a>
-  <ul class="nav-links">
-    <li>
+  <ul class="nav-links-list">
+    <li class="nav-link-container">
       <a
+        class="nav-link"
         routerLink="/home"
         [ngClass]="{ active: currentRoute === 'home' }"
         (click)="setCurrentRoute('home')"
         >דף בית</a
       >
     </li>
-    <li>
+    <li class="nav-link-container">
       <a
+        class="nav-link"
         routerLink="/services"
         [ngClass]="{ active: currentRoute === 'services' }"
         (click)="setCurrentRoute('services')"
         >השירותים שלנו</a
       >
     </li>
-    <li>
+    <li class="nav-link-container">
       <a
+        class="nav-link"
         routerLink="/portfolio"
         [ngClass]="{ active: currentRoute === 'portfolio' }"
         (click)="setCurrentRoute('portfolio')"
         >פרוייקטים</a
       >
     </li>
-    <li>
+    <li class="nav-link-container">
       <a
+        class="nav-link"
         routerLink="/contact"
         [ngClass]="{ active: currentRoute === 'contact' }"
         (click)="setCurrentRoute('contact')"
         >צור קשר</a
       >
     </li>
-    <li>
+    <li class="nav-link-container">
       <a
+        class="nav-link"
         routerLink="/faqs"
         [ngClass]="{ active: currentRoute === 'faqs' }"
         (click)="setCurrentRoute('faqs')"
         >שאלות ותשובות</a
       >
     </li>
-    <li>
+    <li class="nav-link-container">
       <a
+        class="nav-link"
         routerLink="/about"
         [ngClass]="{ active: currentRoute === 'about' }"
         (click)="setCurrentRoute('about')"
         >אודות</a
       >
     </li>
-    <li>
+    <li class="nav-link-container">
       <a
+        class="nav-link"
         routerLink="/terms"
         [ngClass]="{ active: currentRoute === 'terms' }"
         (click)="setCurrentRoute('terms')"
@@ -70,21 +77,30 @@
 <footer class="footer">
   <div class="footer-content">
     <div class="footer-links">
-      <h3 class="scroll-element" appScrollVisible>Quick Links</h3>
+      <h3 class="scroll-element" appScrollVisible>פעולות זריזות</h3>
       <ul>
         <li class="scroll-element" appScrollVisible>
-          <a href="/about">About</a>
+          <a href="/about">אודות</a>
         </li>
         <li class="scroll-element" appScrollVisible>
-          <a href="/contact">Contact</a>
+          <a href="/contact">צרו קשר</a>
         </li>
         <li class="scroll-element" appScrollVisible>
-          <a href="/terms">Terms of Service</a>
+          <a href="/terms">תקנון</a>
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          <a href="/portfolio">פרוייקטים</a>
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          <a href="/services">השירותים שלנו</a>
+        </li>
+        <li class="scroll-element" appScrollVisible>
+          <a href="/faqs">שאלות ותשובות</a>
         </li>
       </ul>
     </div>
     <div class="footer-social">
-      <h3 class="scroll-element" appScrollVisible>Follow Us</h3>
+      <h3 class="scroll-element" appScrollVisible>תעקבו אחרינו</h3>
       <ul>
         <li class="scroll-element" appScrollVisible>
           <a href="https://twitter.com/TechWebSolutions" target="_blank"
@@ -106,15 +122,15 @@
       </ul>
     </div>
     <div class="footer-contact">
-      <h3 class="scroll-element" appScrollVisible>Contact Information</h3>
+      <h3 class="scroll-element" appScrollVisible>מוקד תקשורת</h3>
       <address class="scroll-element" appScrollVisible>
-        <div><strong>Address:</strong> Some address</div>
+        <div><strong>:כתובת</strong> Some address</div>
         <br />
-        <div><strong>Phone:</strong> Some phone</div>
+        <div><strong>:טלפון</strong> Some phone</div>
         <br />
         <div>
-          <strong>Email: </strong>
-          <a href="mailto:contact@LionGroup.com">contact&#64;LionGroup.com</a>
+          <strong>:אימייל</strong>
+          <a href="mailto:contact@LionGroup.com"> contact&#64;LionGroup.com</a>
         </div>
       </address>
     </div>

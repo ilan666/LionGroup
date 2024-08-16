@@ -49,6 +49,24 @@ body {
   background-color: #ecf0f1;
 }
 
+.primary-button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  margin: auto;
+}
+
+.primary-button:hover {
+  background-color: #16a085;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
 // Main Color: #1ABC9C (Teal) - Utilized for primary actions, call-to-actions, and highlights.
 // Secondary Color: #2C3E50 (Dark Blue-Grey) - Used for headers, text, footers, and backgrounds.
 // Additional Colors:

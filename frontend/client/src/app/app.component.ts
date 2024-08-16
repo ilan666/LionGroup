@@ -30,12 +30,15 @@ import { filter } from 'rxjs';
   ],
 })
 export class AppComponent implements OnInit {
-  title = 'client';
+  title = 'LionGroup Co.';
   currentRoute: string;
 
   previousScrollPosition = 0;
 
   isBrowser: boolean;
+
+  public screenWidth: number;
+  public screenHeight: number;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
@@ -50,18 +53,20 @@ export class AppComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.scrollService.scrollToTop(); // Or use window.scrollTo(0, 0) directly here
-      });
+    if (this.isBrowser) {
+      this.router.events
+        .pipe(filter((event) => event instanceof NavigationEnd))
+        .subscribe(() => {
+          this.scrollService.scrollToTop(); // Or use window.scrollTo(0, 0) directly here
+        });
 
-    if (isPlatformBrowser(this.platformId)) {
       this.router.events
         .pipe(filter((event) => event instanceof NavigationEnd))
         .subscribe(() => {
           this.resetAnimations();
         });
+
+      this.updateScreenSize();
     }
   }
 
@@ -88,19 +93,71 @@ export class AppComponent implements OnInit {
   onScroll() {
     if (this.isBrowser) {
       const navbar = this.document.querySelector('.navbar') as HTMLElement;
+      const navlinkcontainer = this.document.querySelectorAll(
+        '.nav-link-container'
+      ) as NodeListOf<HTMLElement>;
+      const navlink = this.document.querySelectorAll(
+        '.nav-link'
+      ) as NodeListOf<HTMLElement>;
       const currentScrollPosition = window.pageYOffset;
 
-      if (this.previousScrollPosition > currentScrollPosition) {
-        navbar.style.top = '0';
+      if (this.screenWidth < 768) {
+        if (this.previousScrollPosition > currentScrollPosition) {
+          navbar.style.transform = 'translateY(0px)';
+        } else {
+          navbar.style.transform = 'translateY(-80px)';
+        }
+      } else if (this.screenWidth >= 768 && this.screenWidth < 992) {
+        if (this.previousScrollPosition > currentScrollPosition) {
+          navbar.style.transform = 'translateY(0px)';
+        } else {
+          navbar.style.transform = 'translateY(-80px)';
+        }
       } else {
-        navbar.style.top = '-85px'; // adjust based on your navbar height
+        if (this.previousScrollPosition > currentScrollPosition) {
+          navlinkcontainer.forEach((link) => {
+            link.style.paddingTop = '35px';
+            link.style.paddingBottom = '35px';
+          });
+
+          navlink.forEach((link) => {
+            link.style.paddingTop = '35px';
+            link.style.paddingBottom = '35px';
+            link.style.fontSize = '20px';
+          });
+        } else {
+          navlinkcontainer.forEach((link) => {
+            link.style.paddingTop = '20px';
+            link.style.paddingBottom = '20px';
+          });
+
+          navlink.forEach((link) => {
+            link.style.paddingTop = '20px';
+            link.style.paddingBottom = '20px';
+            link.style.fontSize = '16px';
+          });
+        }
       }
 
       this.previousScrollPosition = currentScrollPosition;
     }
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    if (this.isBrowser) {
+      this.updateScreenSize();
+    }
+  }
+
   setCurrentRoute(route: string) {
     this.currentRoute = route;
+  }
+
+  private updateScreenSize() {
+    if (this.isBrowser) {
+      this.screenWidth = window.innerWidth;
+      this.screenHeight = window.innerHeight;
+    }
   }
 }
