@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -15,11 +22,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     './contactSection.scss',
   ],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   contactForm: FormGroup;
   currentIndex: number = 0;
   totalSections: number = 4;
   showContactWindow = false;
+  @ViewChild('heroVideo', { static: false })
+  videoPlayer!: ElementRef<HTMLVideoElement>;
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -28,6 +37,9 @@ export class HomeComponent implements OnInit {
       phone: ['', Validators.required],
       description: [''],
     });
+  }
+  ngAfterViewInit(): void {
+    this.videoPlayer.nativeElement.playbackRate = 0.7;
   }
 
   ngOnInit(): void {}

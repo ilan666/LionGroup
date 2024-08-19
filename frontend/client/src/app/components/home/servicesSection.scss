@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .services-section {
   overflow: hidden;
 }
@@ -6,6 +8,9 @@
   width: 100%;
   height: 80vh;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scroll-sections {
@@ -28,75 +33,54 @@
   top: 0;
   left: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../../../../assets/web-design-photo.jpg);
+    url(../../../assets/bio-photo.jpg);
 }
 
 ul {
   padding: 0 20px;
-  text-align: center;
   margin: 20px auto;
-  max-width: 500px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  max-width: 550px;
   direction: rtl;
   list-style: none;
-  gap: 25px;
-  justify-content: center;
 }
 
 ul li {
-  max-width: 130px;
   padding: 10px;
-  background-color: #f39c12;
-  border-radius: 10px;
-  color: #ecf0f1;
-  font-size: 18px;
-  animation: floatAnimation 5s infinite;
+  padding-right: 60px;
+  color: $blackThemeGreyText;
+  font-weight: 20px;
+  position: relative;
+}
+
+ul li strong {
+  color: $blackThemeOrangeHighlight;
+  font-size: 24px;
   letter-spacing: 1px;
   font-weight: bold;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-ul li:nth-child(1) {
-  animation-delay: 0s;
-}
-
-ul li:nth-child(2) {
-  animation-delay: 1s;
-}
-
-ul li:nth-child(3) {
-  animation-delay: 2s;
-}
-
-ul li:nth-child(4) {
-  animation-delay: 3s;
-}
-
-ul li:nth-child(5) {
-  animation-delay: 4s;
+ul li i {
+  color: $blackThemeOrangeHighlight;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .description {
-  position: absolute;
   max-width: 550px;
-  background-color: #3498dbae;
-  backdrop-filter: blur(3px);
   padding: 20px;
   height: fit-content;
   color: #ffffff;
-  z-index: 100;
   display: flex;
   flex-direction: column;
   text-align: center;
-  top: -10%;
-  left: 15%;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.7);
+  border-left: 15px solid #ffffff;
 }
 
 .description h2 {
-  font-size: 2em;
+  font-size: 48px;
   text-align: center;
   color: #ecf0f1;
 }
@@ -107,8 +91,9 @@ ul li:nth-child(5) {
 }
 
 .description .primary-button {
-  width: fit-content;
+  width: 40%;
   margin: auto;
+  margin-top: 40px;
 }
 
 .form-container {
@@ -157,12 +142,15 @@ ul li:nth-child(5) {
 .btn-slider-right:hover,
 .btn-slider-left:hover {
   cursor: pointer;
-  color: #ecf0f1;
-  background-color: transparent;
+  color: black;
+  background-color: $blackThemeWhiteText;
 }
 
 .services-container {
   position: relative;
+  border-top: 90px solid
+      linear-gradient(from middle to left $blackThemeWhiteText, black),
+    linear-gradient(from middle to right $blackThemeWhiteText, black);
 }
 
 @media screen and (max-width: 1024px) {
@@ -250,15 +238,5 @@ ul li:nth-child(5) {
 
   .description p {
     font-size: 14px;
-  }
-}
-
-@keyframes floatAnimation {
-  0%,
-  100% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-10px);
   }
 }

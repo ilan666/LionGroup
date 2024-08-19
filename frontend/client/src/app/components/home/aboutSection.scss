@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .short-description-container {
   margin: auto;
   display: flex;
@@ -52,7 +54,7 @@
   left: -50%;
   padding: 150px;
   border-radius: 20%;
-  background-image: url(../../../../assets/about-3.jpeg);
+  background-image: url(../../../assets/about-1.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -67,7 +69,7 @@
   right: -25%;
   padding: 100px;
   border-radius: 20%;
-  background-image: url(../../../../assets/about-1.jpg);
+  background-image: url(../../../assets/about-2.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -82,7 +84,7 @@
   right: -40%;
   padding: 120px;
   border-radius: 20%;
-  background-image: url(../../../../assets/about-2.jpg);
+  background-image: url(../../../assets/about-3.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,6 +100,10 @@
   font-weight: bolder;
 }
 
+.short-description-container h1:nth-child(2) {
+  text-decoration: underline #620d89;
+}
+
 .short-description-container p {
   text-align: center;
   margin-top: 50px;
@@ -106,9 +112,9 @@
   letter-spacing: 2px;
 }
 
-.highlight-header {
-  color: #1abc9c;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.44);
+.highlight {
+  color: $blackThemeOrangeHighlight;
+  text-shadow: 0px 0px 10px #f1c40fa1;
 }
 
 @media screen and (max-width: 1024px) {

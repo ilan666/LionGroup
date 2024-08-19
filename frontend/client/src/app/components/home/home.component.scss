@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .short-section {
   width: 100%;
   max-height: 120vh;
@@ -11,12 +13,6 @@
   font-size: 6em;
   margin-bottom: 20px;
   margin-top: 0;
-}
-
-.header-3 {
-  color: #1abc9c;
-  font-size: 1.5em;
-  margin: 0;
 }
 
 input,
@@ -64,6 +60,42 @@ textarea:valid ~ label {
 .form-group {
   width: 100%;
   margin-bottom: 5px;
+}
+
+.background-video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.background-2section-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.background-video-container::before,
+.background-video-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 5%;
+  background: linear-gradient(to bottom, black, transparent);
+  z-index: 1;
+  pointer-events: none; /* Ensure it doesn't interfere with interactions */
+}
+
+.background-video-container::before {
+  top: 0;
+}
+
+.background-video-container::after {
+  bottom: 0;
+  background: linear-gradient(to top, black, transparent);
 }
 
 @media screen and (max-width: 768px) {

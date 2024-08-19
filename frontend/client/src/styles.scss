@@ -39,6 +39,13 @@ $client-theme: mat.define-theme(
 // @include mat.color-variants-backwards-compatibility($client-theme);
 /* You can add global styles to this file, and also import other style files */
 
+$blackThemeWhiteText: #ffffff;
+$blackThemeGreyText: #7f8c8d;
+$blackThemeOrange: #f39c12;
+$blackThemeOrangeHover: #f7b953;
+$blackThemeOrangeHighlight: #f1c40f;
+$blackThemePurple: #620d89;
+
 html,
 body {
   height: 100%;
@@ -46,11 +53,16 @@ body {
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
-  background-color: #ecf0f1;
+  background-color: black;
+}
+
+h1,
+p {
+  color: $blackThemeWhiteText;
 }
 
 .primary-button {
-  background-color: #1abc9c;
+  background-color: $blackThemeOrange;
   color: white;
   border: none;
   border-radius: 2em;
@@ -63,8 +75,8 @@ body {
 }
 
 .primary-button:hover {
-  background-color: #16a085;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  background-color: $blackThemeOrangeHighlight;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.204);
 }
 
 // Main Color: #1ABC9C (Teal) - Utilized for primary actions, call-to-actions, and highlights.
@@ -99,3 +111,30 @@ body {
 // Icons and Accents
 // Icons: Utilize #1ABC9C (Teal) or #3498DB (Blue) for icons to keep them in line with the branding colors.
 // Highlights: Use #F39C12 (Orange) for elements that need to draw attention like notifications or important messages.
+
+// Main Color:
+
+// Primary Orange: #f39c12
+// Background:
+
+// Black: #000000
+// Complementary Colors:
+
+// Dark Gray: #2c3e50 (for sections, headers, or footers against the black background)
+// Light Gray: #bdc3c7 (for text or subtle elements on black or dark gray)
+// Accent Colors:
+
+// Bright Yellow: #f1c40f (for highlights, buttons, or icons)
+// Deep Blue: #34495e (for contrast and balance with the orange)
+// Neutral Tones:
+
+// White: #ffffff (for text or elements that need to pop against darker backgrounds)
+// Additional Tints/Shades:
+
+// Lighter Orange: #f7b953 (for hover effects or lighter elements)
+// Darker Orange: #c87d0a (for active states or shading)
+// Usage Suggestions
+// Buttons and CTAs: Use the primary orange #f39c12 for call-to-action buttons. Consider using the bright yellow #f1c40f as a hover color to draw attention.
+// Text: Use white #ffffff for main text on dark backgrounds to ensure readability. Light gray #bdc3c7 can be used for secondary text.
+// Backgrounds: Use black #000000 as the primary background color, complemented by dark gray #2c3e50 for alternate sections or backgrounds.
+// Headers/Footers: Utilize deep blue #34495e to provide a strong contrast against sections dominated by orange and to navigate visual sections effectively.
