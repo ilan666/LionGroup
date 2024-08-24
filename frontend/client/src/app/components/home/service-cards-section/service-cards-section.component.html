@@ -1,0 +1,54 @@
+<section>
+  <div class="section-container">
+    <div class="section-header-container">
+      <h2 class="scroll-element" appScrollVisible>השירותים שלנו</h2>
+      <h5 class="scroll-element" appScrollVisible>?כיצד נוכל לעזור לכם</h5>
+    </div>
+    <div class="service-cards">
+      <div class="service-card scroll-element" appScrollVisible appScrollOffset>
+        <div class="header-container">
+          <i class="services-icon material-icons">desktop_windows</i>
+          <h5>פיתוח אתרים</h5>
+          <p>פיתוח אתרים מדהימים ופונקציונליים למינוף והבלטת המותג שלך</p>
+        </div>
+        <button class="primary-button" (click)="openWindow = true">
+          להשארת פרטים
+        </button>
+      </div>
+      <div class="service-card scroll-element" appScrollVisible appScrollOffset>
+        <div class="header-container">
+          <i class="services-icon material-icons">query_stats</i>
+          <h5>אופטימיזציה למנועי חיפוש</h5>
+          <p>שיפור הנראות והדירוגים שלך במנועי החיפוש</p>
+        </div>
+        <button class="primary-button" (click)="openWindow = true">
+          להשארת פרטים
+        </button>
+      </div>
+      <div class="service-card scroll-element" appScrollVisible appScrollOffset>
+        <div class="header-container">
+          <i class="services-icon material-icons">shopping_cart</i>
+          <h5>פתרונות מסחר אלקטרוני</h5>
+          <p>מערכות מסחר אלקטרוני מקיפות המותאמות לצרכים שלך</p>
+        </div>
+        <button class="primary-button" (click)="openWindow = true">
+          להשארת פרטים
+        </button>
+      </div>
+      <div class="service-card scroll-element" appScrollVisible appScrollOffset>
+        <div class="header-container">
+          <i class="services-icon material-icons">person</i>
+          <h5>שיווק ופרסום</h5>
+          <p>ספק לעצמך נראות והצלחה עם שירותי הפרסום המקצועיים שלנו</p>
+        </div>
+        <button class="primary-button" (click)="openWindow = true">
+          להשארת פרטים
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-contact-window
+    [openWindow]="openWindow"
+    (closeWindow)="closeContactWindow()"
+  ></app-contact-window>
+</section>

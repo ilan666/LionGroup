@@ -1,11 +1,11 @@
-@import "../../../styles.scss";
+@import "../../../../styles.scss";
 
 .short-description-container {
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 700px;
+  max-width: 800px;
   position: relative;
 }
 
@@ -54,7 +54,7 @@
   left: -50%;
   padding: 150px;
   border-radius: 20%;
-  background-image: url(../../../assets/about-1.jpg);
+  background-image: url(../../../../assets/about-1.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -69,7 +69,7 @@
   right: -25%;
   padding: 100px;
   border-radius: 20%;
-  background-image: url(../../../assets/about-2.jpg);
+  background-image: url(../../../../assets/about-2.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -84,7 +84,7 @@
   right: -40%;
   padding: 120px;
   border-radius: 20%;
-  background-image: url(../../../assets/about-3.jpeg);
+  background-image: url(../../../../assets/about-3.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -92,15 +92,7 @@
   animation: ambientAnimation 12s infinite alternate;
 }
 
-.short-description-container h1 {
-  font-size: 6em;
-  margin: 0;
-  line-height: 0.9;
-  letter-spacing: -2px;
-  font-weight: bolder;
-}
-
-.short-description-container h1:nth-child(2) {
+.short-description-container h2:nth-child(2) {
   text-decoration: underline #620d89;
 }
 
@@ -108,8 +100,8 @@
   text-align: center;
   margin-top: 50px;
   margin-bottom: 0px;
-  font-size: 20px;
   letter-spacing: 2px;
+  font-size: 20px;
 }
 
 .highlight {

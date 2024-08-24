@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "intersection-observer"
+            ],
             "outputPath": "dist/client",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -48,12 +51,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "60kB",
+                  "maximumError": "100kB"
                 }
               ],
               "outputHashing": "all"
@@ -101,7 +104,9 @@
               "src/styles.scss",
               "./node_modules/material-icons/iconfont/material-icons.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/particles.js/particles.js"
+            ]
           }
         }
       }

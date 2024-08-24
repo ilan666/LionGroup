@@ -1,0 +1,26 @@
+<div class="contact-window" *ngIf="openWindow">
+  <div class="contact-window-form-container scroll-element" appScrollVisible>
+    <button (click)="onClose()" class="contact-window-exit">
+      <i class="material-icons">close</i>
+    </button>
+
+    <h4>השאירו פרטים ונדבר איתכם</h4>
+
+    <form autocapitalize="off" autocomplete="off">
+      <div class="form-group scroll-element">
+        <input type="text" id="fullNameWindow" name="fullNameWindow" required />
+        <label for="fullNameWindow">:שם מלא</label>
+      </div>
+      <div class="form-group scroll-element">
+        <input type="email" id="email" name="email" required />
+        <label for="email">:אימייל</label>
+      </div>
+      <div class="form-group scroll-element">
+        <input type="tel" id="phone" name="phone" required />
+        <label for="phone">:טלפון</label>
+      </div>
+
+      <button type="submit" class="primary-button">שליחה</button>
+    </form>
+  </div>
+</div>

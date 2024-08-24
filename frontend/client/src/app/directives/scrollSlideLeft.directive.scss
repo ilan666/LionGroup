@@ -1,12 +1,12 @@
-.show {
-  animation: slideIn 0.5s forwards;
+.showToRight {
+  animation: slideInToRight 0.5s forwards;
 }
 
-.hide {
-  animation: slideOut 0.5s backwards;
+.hideToLeft {
+  animation: slideOutToLeft 0.5s backwards;
 }
 
-@keyframes slideIn {
+@keyframes slideInToRight {
   from {
     transform: translateX(-100%);
     opacity: 0;
@@ -17,7 +17,7 @@
   }
 }
 
-@keyframes slideOut {
+@keyframes slideOutToLeft {
   from {
     transform: translateX(0);
     opacity: 1;

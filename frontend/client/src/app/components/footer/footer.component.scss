@@ -1,0 +1,86 @@
+@import "../../../styles.scss";
+
+.footer {
+  background: $blackThemeGreyText;
+  color: #ecf0f1;
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.footer-content div {
+  margin-bottom: 20px;
+  flex: 1 1 300px;
+}
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li,
+.footer-social ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links h6 {
+  font-weight: bold;
+}
+
+.footer-links ul li a,
+.footer-social ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover,
+.footer-social ul li a:hover {
+  color: #3498db;
+}
+
+.footer-contact address {
+  font-style: normal;
+}
+
+.footer-contact address a {
+  color: #ecf0f1;
+  text-decoration: underline;
+}
+
+.footer-contact address div {
+  margin: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid black;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .footer-content {
+    padding: 10px;
+  }
+
+  .footer-content div {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-links ul li,
+  .footer-social ul li {
+    margin-bottom: 5px;
+  }
+}

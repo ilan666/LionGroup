@@ -1,0 +1,65 @@
+@import "../../../styles.scss";
+
+section {
+  margin: 120px 0px;
+}
+
+.section-container {
+  width: 80%;
+  margin: auto;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.package-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.package {
+  width: calc(100% / 3);
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+}
+
+.package ul {
+  direction: rtl;
+  list-style: none;
+  padding: 0 15px;
+  margin: 0;
+}
+
+.package ul li {
+  padding: 50px 0px;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+}
+
+.package-header-container {
+  padding: 30px 0px;
+}
+
+.package-header-container h3 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  height: 100%;
+}
+
+.package:nth-child(2) .package-header-container {
+  background-color: $blackThemeOrange;
+}
+
+.package-header-container p {
+  font-size: 36px;
+  margin: 0;
+}
+
+.package .primary-button {
+  margin: 15px 0px;
+  width: 60%;
+}

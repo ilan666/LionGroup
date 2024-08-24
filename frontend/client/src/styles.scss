@@ -1,7 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"); /* As an example */
 
 // Plus imports for other components in your app.
 
@@ -52,13 +52,96 @@ body {
 }
 body {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: black;
 }
 
+h1 {
+  font-size: 11.089rem;
+}
+
+h2 {
+  font-size: 6.854rem;
+}
+
+h3 {
+  font-size: 4.236rem;
+}
+
+h4 {
+  font-size: 2.618rem;
+}
+
+h5 {
+  font-size: 1.618rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
 h1,
+h2,
+h3,
+h4,
+h5,
 p {
   color: $blackThemeWhiteText;
+  margin: 0;
+}
+
+input,
+textarea {
+  border-radius: 4px;
+  border: 1px solid #d8d8d8a0;
+  padding: 10px 10px 10px 5px;
+  font-size: 18px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s;
+  text-align: right;
+  margin-top: 20px;
+  color: #000000;
+  background-color: #d8d8d8a0;
+  backdrop-filter: blur(5px);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #f39c12;
+}
+
+label {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  padding: 0 5px;
+  font-size: 20px;
+  pointer-events: none;
+  color: #000000;
+  transition: all 0.5s ease;
+}
+
+input:focus ~ label,
+textarea:focus ~ label,
+input:valid ~ label,
+textarea:valid ~ label {
+  top: 0px;
+  right: -10px;
+  font-size: 16px;
+  color: #f39c12;
+}
+
+section {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+section:last-child {
+  padding-bottom: 0px;
 }
 
 .primary-button {
@@ -71,7 +154,7 @@ p {
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-size: 18px;
-  margin: auto;
+  margin: 15px auto;
 }
 
 .primary-button:hover {

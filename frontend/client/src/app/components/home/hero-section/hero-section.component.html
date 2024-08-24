@@ -1,0 +1,38 @@
+<section>
+  <div class="video-container">
+    <video class="hero-video" autoplay playsinline muted loop>
+      <source src="../../../../assets/HeroVideo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+  <div class="hero-section-content">
+    <div
+      class="logo-image hidden-left"
+      appScrollSlideLeft
+      [showClass]="'showToRight'"
+      [hideClass]="'hideToLeft'"
+      [delay]="'0.4s'"
+    ></div>
+    <button
+      class="primary-button hidden-left"
+      appScrollSlideLeft
+      [showClass]="'showToRight'"
+      [hideClass]="'hideToLeft'"
+      [delay]="'0.7s'"
+      (click)="openWindow = true"
+    >
+      &larr; !הצטרפו אלינו
+    </button>
+    <div class="hero-arrow-button-container">
+      <button class="arrow-button" (click)="scrollToSection('about')">
+        <span class="arrow">&#8595;</span>
+        <span class="arrow">&#8595;</span>
+      </button>
+    </div>
+  </div>
+  <app-contact-window
+    [openWindow]="openWindow"
+    (closeWindow)="closeContactWindow()"
+  ></app-contact-window>
+</section>

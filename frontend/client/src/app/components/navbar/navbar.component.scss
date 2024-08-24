@@ -1,0 +1,148 @@
+@import "../../../styles.scss";
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.logo {
+  background-image: url("../../../assets/LionGroupLogoSmall.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 250px;
+}
+
+.logo:focus-visible {
+  outline-offset: 0px;
+}
+
+.nav-links-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link-container {
+  padding: 35px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link {
+  color: white;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 35px 0px;
+}
+
+.nav-link:hover {
+  color: $blackThemeOrangeHighlight;
+  border-bottom: 1px solid $blackThemeOrangeHighlight;
+  cursor: pointer;
+}
+
+.active {
+  color: $blackThemeOrange !important;
+  border-bottom: 1px solid $blackThemeOrange;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.burger-toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-toggle .line2 {
+  opacity: 0;
+}
+
+.burger-toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.contact-call-icon {
+  display: none;
+  background-color: transparent;
+  color: $blackThemeOrangeHighlight;
+  border: none;
+}
+
+.contact-call-icon i {
+  font-size: 32px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .nav-link-container {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+  }
+
+  .nav-link {
+    text-align: center;
+    padding: 14px 0;
+    width: 100%;
+  }
+
+  .nav-link.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-call-icon {
+    display: block;
+  }
+
+  .logo {
+    height: 30px;
+    width: 150px;
+  }
+
+  .nav-link-container {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 20px 0;
+  }
+}

@@ -6,7 +6,7 @@ import { ScrollVisibleDirective } from '../../directives/scrollVisible.directive
   templateUrl: './contact.component.html',
   styleUrls: [
     './contact.component.scss',
-    '../../directives/scrollVisible.directive.css',
+    '../../directives/scrollVisible.directive.scss',
   ],
 })
 export class ContactComponent {}

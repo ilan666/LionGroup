@@ -1,0 +1,78 @@
+<nav>
+  <div class="navbar-container">
+    <button class="contact-call-icon">
+      <i class="material-icons">call</i>
+    </button>
+    <a class="logo" routerLink="/" (click)="setCurrentRoute('home')"></a>
+    <ul class="nav-links-list">
+      <li class="nav-link-container">
+        <a
+          class="nav-link"
+          routerLink="/home"
+          [ngClass]="{ active: currentRoute === 'home' }"
+          (click)="setCurrentRoute('home')"
+          >דף בית</a
+        >
+      </li>
+      <li class="nav-link-container">
+        <a
+          class="nav-link"
+          routerLink="/services"
+          [ngClass]="{ active: currentRoute === 'services' }"
+          (click)="setCurrentRoute('services')"
+          >השירותים שלנו</a
+        >
+      </li>
+      <li class="nav-link-container">
+        <a
+          class="nav-link"
+          routerLink="/portfolio"
+          [ngClass]="{ active: currentRoute === 'portfolio' }"
+          (click)="setCurrentRoute('portfolio')"
+          >פרוייקטים</a
+        >
+      </li>
+      <li class="nav-link-container">
+        <a
+          class="nav-link"
+          routerLink="/contact"
+          [ngClass]="{ active: currentRoute === 'contact' }"
+          (click)="setCurrentRoute('contact')"
+          >צור קשר</a
+        >
+      </li>
+      <li class="nav-link-container">
+        <a
+          class="nav-link"
+          routerLink="/faqs"
+          [ngClass]="{ active: currentRoute === 'faqs' }"
+          (click)="setCurrentRoute('faqs')"
+          >שאלות ותשובות</a
+        >
+      </li>
+      <li class="nav-link-container">
+        <a
+          class="nav-link"
+          routerLink="/about"
+          [ngClass]="{ active: currentRoute === 'about' }"
+          (click)="setCurrentRoute('about')"
+          >אודות</a
+        >
+      </li>
+      <li class="nav-link-container">
+        <a
+          class="nav-link"
+          routerLink="/terms"
+          [ngClass]="{ active: currentRoute === 'terms' }"
+          (click)="setCurrentRoute('terms')"
+          >תקנון</a
+        >
+      </li>
+    </ul>
+    <div class="burger" (click)="toggleNavbar()">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </div>
+</nav>
