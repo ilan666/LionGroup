@@ -39,7 +39,7 @@ export class ScrollSlideLeftDirective implements AfterViewInit {
     const viewportHeight = window.innerHeight;
 
     // Calculate the top and bottom thresholds of the section
-    const sectionVisibleTop = this.sectionTop + this.sectionHeight * 0.5;
+    const sectionVisibleTop = this.sectionTop + this.sectionHeight * 0.2;
     const sectionVisibleBottom = this.sectionTop + this.sectionHeight;
 
     // Check if the section is 20% visible from the top or fully visible from the bottom

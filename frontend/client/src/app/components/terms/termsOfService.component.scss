@@ -1,44 +1,39 @@
+@import "../../../styles.scss";
 .terms-container {
-  font-family: "Roboto", sans-serif;
   line-height: 1.6;
-  color: #34495e;
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
-  padding: 30px;
-  padding-top: 60px;
-  background: #f7f9fa;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease;
-}
-
-.terms-container:hover {
-  background: #ffffff;
+  padding-top: 120px;
 }
 
 section {
-  margin-bottom: 30px;
   padding: 10px 0;
-  border-bottom: 1px solid #ecf0f1;
+  text-align: right;
+  margin-bottom: 60px;
 }
 
-.intro h1 {
-  font-size: 2.5em;
-  color: #2c3e50;
-  text-align: center;
+.text-container p {
+  font-size: 16px;
+  letter-spacing: 0.5px;
 }
 
-.intro p {
-  text-align: center;
-  font-size: 1.2em;
+.terms-container h5 {
+  border-right: 5px solid $blackThemeOrangeHighlight;
+  border-bottom: 1px solid rgb(203, 201, 201);
+  padding-right: 10px;
 }
 
-h2 {
-  color: #2980b9;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-  font-weight: 500;
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+}
+
+.intro div {
+  width: 10%;
+  border-bottom: 10px solid $blackThemeOrangeHighlight;
+  margin: 40px 0px;
 }
 
 ul {
@@ -49,19 +44,22 @@ ul {
 address {
   font-style: normal;
   margin-top: 10px;
+  color: #fff;
+  text-align: right;
+}
+
+address a {
+  text-decoration: none;
+  color: $blackThemeOrangeHighlight;
 }
 
 address strong {
-  display: block;
-  font-weight: 500;
+  font-weight: bold;
+  color: $blackThemeGreyText;
 }
 
-a {
-  color: #3498db;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #2980b9;
+.highlight {
+  color: $blackThemeOrange;
+  font-size: 16px;
+  font-weight: bold;
 }
